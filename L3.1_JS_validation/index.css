@@ -1,136 +1,100 @@
 /* Basic styling for the entire page */
-/* General styles */
 body {
-    /* Sets the font family to Arial, sans-serif */
     font-family: Arial, sans-serif;
-    /* Sets the top, right, bottom, and left margins to 0 */
     margin: 0;
-    /* Sets the top, right, bottom, and left padding to 0 */
     padding: 0;
-    /* Enables flexbox layout */
     display: flex;
-    /* Centers content horizontally */
     justify-content: center;
-    /* Centers content vertically */
     align-items: center;
-    /* Sets the height of the body to 100% of the viewport height */
-    /*height: 100vh;
-    /* Sets the background color to light gray */
     background-color: #f4f4f4;
 }
 
 /* Style for the form container */
-/* Form container */
 form {
-    /* Sets the background color to white */
     background: #fff;
-    /* Sets the padding to 20 pixels */
     padding: 20px;
-    /* Sets the border radius to 8 pixels */
     border-radius: 8px;
-    /* Adds a box shadow */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Sets the width of the form to 300 pixels */
     width: 400px;
     margin-top: 20px;
 }
 
 /* Style for form elements */
-/* Form elements */
 div {
-    /* Sets the bottom margin to 15 pixels */
     margin-bottom: 15px;
 }
 
 label {
-    /* Makes the label a block element */
     display: block;
-    /* Sets the bottom margin to 5 pixels */
-    margin-bottom: 5px;
-    /* Sets the font weight to bold */
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
 input[type="text"],
-input[type="password"] {
-    /* Sets the width to 100% */
+input[type="password"],input[type="number"],input[type="email"],input[type="date"],input[type="tel"],#country {
     width: 100%;
-    /* Sets the padding to 8 pixels */
     padding: 8px;
-    /* Includes padding in the element's total width and height */
     box-sizing: border-box;
-    /* Sets the border to 1 pixel solid light gray */
     border: 1px solid #ccc;
-    /* Sets the border radius to 4 pixels */
     border-radius: 4px;
 }
 
+/* Style for fieldsets */
 fieldset {
-    /* Sets the border to 1 pixel solid light gray */
     border: 1px solid #ccc;
-    /* Sets the padding to 10 pixels */
     padding: 10px;
-    /* Sets the border radius to 4 pixels */
     border-radius: 4px;
+    margin-bottom: 15px;
 }
 
-/* Style for legend within fieldset */
 legend {
-    /* Sets the font weight to bold */
     font-weight: bold;
 }
 
-/* Style for radio buttons */
 input[type="radio"] {
-    /* Sets the right margin to 5 pixels */
     margin-right: 5px;
 }
 
 /* Style for submit button */
 button {
-    /* Sets the width to 100% */
     width: 100%;
-    /* Sets the padding to 10 pixels */
     padding: 10px;
-    /* Sets the background color to blue */
     background-color: #007BFF;
-    /* Sets the text color to white */
     color: white;
-    /* Removes the default border */
     border: none;
-    /* Sets the border radius to 4 pixels */
     border-radius: 4px;
-    /* Sets the cursor to a pointer */
     cursor: pointer;
+    margin-top: 10px; /* Add margin-top for better spacing */
 }
 
-/* Style for button hover effect */
 button:hover {
-    /* Sets the background color to a darker blue on hover */
     background-color: #0056b3;
 }
+
 /* Styles for gender radio buttons */
 .gender-fieldset label {
     display: inline-block;
     margin-right: 10px;
 }
 
-
-
-.password-container { /* Add a container for better styling */
-    position: relative; /* Needed for absolute positioning of the eye icon */
-    align-items: center; /* Vertically align items */
+/* Styles for password container and toggle icon */
+.password-container {
+    position: relative;
+    align-items: center;
 }
+
 .password-toggle {
     position: absolute;
     right: 15px;
     margin: 9px;
-    
 }
+
+/* Hidden class for password requirements */
 .hidden {
     display: none;
 }
 
+/* Styles for password requirements */
 #passwordRequirements {
     background: #f4f4f4;
     border: 1px solid #ccc;
@@ -159,8 +123,26 @@ button:hover {
     color: red;
     margin-right: 5px;
 }
-.error-message{
+
+/* Style for error messages */
+.error-message {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+/* Styles for checkbox container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+.checkbox-container label {
+    margin: 0;
 }
