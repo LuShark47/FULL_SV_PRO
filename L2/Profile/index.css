@@ -1,0 +1,60 @@
+* {
+    /* border: 2px red solid; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.PersonCard{
+    text-align: center;
+    width: 300px;
+    background-color: #E1EACD;
+}
+
+.PersonCard img{
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+#Gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers cards horizontally */
+    align-items: center; /* Centers cards vertically */
+    gap: 20px;
+    width: 80%;
+}
+
+#MainContent{
+    display: flex;
+    background-color: #BAD8B6;
+}
+#SideMenu{
+    width: 20%;
+    text-align: center;
+    background: #E1EACD;
+    height: 100vh;
+    justify-content:space-around;
+}
+h3 {
+    color: #8D77AB; /* a dark blue color */
+}
+#SideMenu h3 {
+    padding: 10px 20px; /* Example padding values */
+    background-clip: padding-box; /* Apply the background to the padding area */
+    background-image: linear-gradient(to bottom, transparent, transparent), linear-gradient(to bottom, #8D77AB, #8D77AB); /* Simulate bottom border with background */
+    background-size: 100% 1px, 100% 2px;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+}
+
+body{
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+  

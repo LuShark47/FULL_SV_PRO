@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Form starts here -->
+    <form action="https://cyberstars.onrender.com/qa-exercises/new-customer-registers/json" method="post" id="#myForm" onsubmit="theUserSentForm(event)">
+        <!-- Name input field -->
+        <div id="msgName"></div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="name" minlength="2" maxlength="30" required>
+        </div>
+        <!-- Password input field -->
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <i class="password-toggle fas fa-eye" onclick="togglePasswordVisibility()"></i>
+        </div>        
+
+        <!-- Radio buttons for bread selection -->
+        <fieldset>
+            <legend>Select your bread type:</legend>
+            <div>
+                <input type="radio" id="white" name="bread" value="white">
+                <label for="white">White</label>
+            </div>
+            <div>
+                <input type="radio" id="wheat" name="bread" value="wheat">
+                <label for="wheat">Wheat</label>
+            </div>
+            <div>
+                <input type="radio" id="rye" name="bread" value="rye">
+                <label for="rye">Rye</label>
+            </div>
+        </fieldset>
+
+        <!-- Checkbox inputs for additional options -->
+        <fieldset>
+            <legend>Select additional options:</legend>
+            <div>
+                <input type="checkbox" id="glutenFree" name="options" value="glutenFree">
+                <label for="glutenFree">Gluten Free</label>
+            </div>
+            <div>
+                <input type="checkbox" id="organic" name="options" value="organic">
+                <label for="organic">Organic</label>
+            </div>
+            <div>
+                <input type="checkbox" id="extraSeeds" name="options" value="extraSeeds">
+                <label for="extraSeeds">Extra Seeds</label>
+            </div>
+        </fieldset>
+
+        <!-- Date input -->
+        <div>
+            <label for="deliveryDate">Select a delivery date:</label>
+            <input type="date" id="deliveryDate" name="deliveryDate" required>
+        </div>
+
+        <!-- Number input for quantity -->
+        <div>
+            <label for="breadQuantity">How many breads do you need?</label>
+            <input type="number" id="breadQuantity" name="breadQuantity" min="1" max="10" required>
+        </div>
+        <div>
+            <label for="eml">Email:</label>
+            <input name="eml" id="eml" type="email" placeholder="email" required>
+        </div>
+        
+        <fieldset class="gender-fieldset">
+          <legend>Gender</legend>
+          <input type="radio" id="Male" name="Gender" value="Male">
+          <label for="Male">Male</label>
+          <input type="radio" id="Female" name="Gender" value="Female">
+          <label for="Female">Female</label>
+          <input type="radio" id="prefer not to say" name="Gender" value="prefer not to say">
+          <label for="prefer not to say">prefer not to say</label>
+        </fieldset>
+        
+
+        <!-- Submit button -->
+        <div>
+            <button type="submit">Submit</button>
+        </div> 
+        <div>
+            <input type="checkbox" id="AT&C" name="agreeT&C" value="AT&C">
+            <label for="AT&C">I agree to the terms and conditions</label>
+        </div>
+    </form>
+    <!-- Form ends here -->
+
+    <script src="index.js"></script>
+</body>
+
+</html>

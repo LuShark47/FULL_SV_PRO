@@ -1,0 +1,139 @@
+/* Basic styling for the entire page */
+/* General styles */
+body {
+    /* Sets the font family to Arial, sans-serif */
+    font-family: Arial, sans-serif;
+    /* Sets the top, right, bottom, and left margins to 0 */
+    margin: 0;
+    /* Sets the top, right, bottom, and left padding to 0 */
+    padding: 0;
+    /* Enables flexbox layout */
+    display: flex;
+    /* Centers content horizontally */
+    justify-content: center;
+    /* Centers content vertically */
+    align-items: center;
+    /* Sets the height of the body to 100% of the viewport height */
+    /*height: 100vh;
+    /* Sets the background color to light gray */
+    background-color: #f4f4f4;
+}
+
+/* Style for the form container */
+/* Form container */
+form {
+    /* Sets the background color to white */
+    background: #fff;
+    /* Sets the padding to 20 pixels */
+    padding: 20px;
+    /* Sets the border radius to 8 pixels */
+    border-radius: 8px;
+    /* Adds a box shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Sets the width of the form to 300 pixels */
+    width: 400px;
+}
+
+/* Style for form elements */
+/* Form elements */
+div {
+    /* Sets the bottom margin to 15 pixels */
+    margin-bottom: 15px;
+}
+
+label {
+    /* Makes the label a block element */
+    display: block;
+    /* Sets the bottom margin to 5 pixels */
+    margin-bottom: 5px;
+    /* Sets the font weight to bold */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    /* Sets the width to 100% */
+    width: 100%;
+    /* Sets the padding to 8 pixels */
+    padding: 8px;
+    /* Includes padding in the element's total width and height */
+    box-sizing: border-box;
+    /* Sets the border to 1 pixel solid light gray */
+    border: 1px solid #ccc;
+    /* Sets the border radius to 4 pixels */
+    border-radius: 4px;
+}
+
+fieldset {
+    /* Sets the border to 1 pixel solid light gray */
+    border: 1px solid #ccc;
+    /* Sets the padding to 10 pixels */
+    padding: 10px;
+    /* Sets the border radius to 4 pixels */
+    border-radius: 4px;
+}
+
+/* Style for legend within fieldset */
+legend {
+    /* Sets the font weight to bold */
+    font-weight: bold;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    /* Sets the right margin to 5 pixels */
+    margin-right: 5px;
+}
+
+/* Style for submit button */
+button {
+    /* Sets the width to 100% */
+    width: 100%;
+    /* Sets the padding to 10 pixels */
+    padding: 10px;
+    /* Sets the background color to blue */
+    background-color: #007BFF;
+    /* Sets the text color to white */
+    color: white;
+    /* Removes the default border */
+    border: none;
+    /* Sets the border radius to 4 pixels */
+    border-radius: 4px;
+    /* Sets the cursor to a pointer */
+    cursor: pointer;
+}
+
+/* Style for button hover effect */
+button:hover {
+    /* Sets the background color to a darker blue on hover */
+    background-color: #0056b3;
+}
+/* Styles for gender radio buttons */
+.gender-fieldset label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/*password css*/
+/* ... other styles ... */
+
+.password-container { /* Add a container for better styling */
+    position: relative; /* Needed for absolute positioning of the eye icon */
+    display: flex;       /* Use flexbox for easy alignment */
+    align-items: center; /* Vertically align items */
+}
+
+.password-container input[type="password"] {
+    flex-grow: 1;       /* Allow the input field to expand */
+    padding-right: 35px; /* Add space for the icon */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%); /* Vertically center the icon */
+    cursor: pointer;
+    /* Add some styling for appearance */
+    font-size: 1.2em;
+}
