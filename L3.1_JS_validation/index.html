@@ -4,29 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FORM</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
     <!-- Form starts here -->
-    <form action="https://cyberstars.onrender.com/qa-exercises/new-customer-registers/json" method="post" id="#myForm" onsubmit="theUserSentForm(event)">
-        <!-- Name input field -->
+    <form action="https://cyberstars.onrender.com/qa-exercises/new-customer-registers/json" method="post" id="myForm" onsubmit="theUserSentForm(event)">
+        <!-- Error message for name -->
         <div id="msgName" class="error-message"></div>
+        <!-- Name input field -->
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="name">
         </div>
-        <!-- Password input field -->
+        <!-- Email input field -->
+        <div>
+            <label for="eml">Email:</label>
+            <input name="eml" id="eml" type="email" placeholder="email">
+        </div>
+        <!-- Phone number input field -->
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="phone">
+        </div>
+        <!-- Error message for password -->
         <div id="msgPassword" class="error-message"></div>
+        <!-- Password input field with toggle visibility icon -->
         <div class="password-container">
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required onfocus="showPasswordRequirements()" onblur="hidePasswordRequirements()" oninput="checkPasswordRequirements()">
             <i class="password-toggle fa-solid fa-eye" onclick="togglePasswordVisibility()"></i>
-        </div>  
-        <!-- Password requirements --> 
+        </div>
+        <!-- Password requirements list -->
         <div id="passwordRequirements" class="hidden">
             <ul>
                 <li id="minLength">At least 8 characters</li>
@@ -36,7 +47,18 @@
                 <li id="lowerCase">At least 3 lowercase letters</li>
             </ul>
         </div>
-        <!-- Radio buttons for bread selection -->
+        <!-- Gender selection -->
+        <fieldset class="gender-fieldset">
+            <legend>Gender</legend>
+            <div id="msgGender" class="error-message"></div>
+            <input type="radio" id="Male" name="Gender" value="Male">
+            <label for="Male">Male</label>
+            <input type="radio" id="Female" name="Gender" value="Female">
+            <label for="Female">Female</label>
+            <input type="radio" id="prefer not to say" name="Gender" value="prefer not to say">
+            <label for="prefer not to say">prefer not to say</label>
+        </fieldset>
+        <!-- Bread type selection -->
         <fieldset>
             <legend>Select your bread type:</legend>
             <div>
@@ -52,8 +74,7 @@
                 <label for="rye">Rye</label>
             </div>
         </fieldset>
-
-        <!-- Checkbox inputs for additional options -->
+        <!-- Additional options selection -->
         <fieldset>
             <legend>Select additional options:</legend>
             <div>
@@ -69,45 +90,35 @@
                 <label for="extraSeeds">Extra Seeds</label>
             </div>
         </fieldset>
-
-        <!-- Date input -->
+        <!-- Delivery date selection -->
         <div>
             <label for="deliveryDate">Select a delivery date:</label>
             <input type="date" id="deliveryDate" name="deliveryDate">
         </div>
-
-        <!-- Number input for quantity -->
+        <!-- Bread quantity input -->
         <div>
             <label for="breadQuantity">How many breads do you need?</label>
             <input type="number" id="breadQuantity" name="breadQuantity">
         </div>
-        <div>
-            <label for="eml">Email:</label>
-            <input name="eml" id="eml" type="email" placeholder="email">
-        </div>
-        <fieldset class="gender-fieldset">
-          <legend>Gender</legend>
-          <div id="msgGender" class="error-message"></div>
-          <input type="radio" id="Male" name="Gender" value="Male">
-          <label for="Male">Male</label>
-          <input type="radio" id="Female" name="Gender" value="Female">
-          <label for="Female">Female</label>
-          <input type="radio" id="prefer not to say" name="Gender" value="prefer not to say">
-          <label for="prefer not to say">prefer not to say</label>
-        </fieldset>
-        
-
-        <!-- Submit button -->
-        <div>
-            <button type="submit">Submit</button>
-        </div> 
-        <div>
+        <!-- Country selection -->
+        <label for="country">Select your country:</label>
+        <select id="country" name="country">
+            <option value="">Select a country</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+        </select>
+        <!-- Terms and conditions agreement -->
+        <div class="checkbox-container">
             <input type="checkbox" id="AT&C" name="agreeT&C" value="AT&C">
             <label for="AT&C">I agree to the terms and conditions</label>
         </div>
+        <!-- Submit button -->
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </form>
     <!-- Form ends here -->
-
     <script src="index.js"></script>
 </body>
 

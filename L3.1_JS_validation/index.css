@@ -46,7 +46,11 @@ fieldset {
     border-radius: 4px;
     margin-bottom: 15px;
 }
-
+fieldset  label, fieldset input[type="radio"] {
+    display: inline;
+    margin-right: 10px;
+}
+    
 legend {
     font-weight: bold;
 }

@@ -1,75 +1,81 @@
-function theUserSentForm(event){
+// Function to handle form submission
+function theUserSentForm(event) {
     event.preventDefault();
-    if(document.querySelector("#name").value.length >= 2)
-    {
-        //if you want just to enter text use innerText instead of innerHTML
-        document.querySelector("#msgName").innerHTML = "<h4>name is long than 2 letters</h4>";
-    }
-    // setTimeout(() => {
-    //     document.querySelector("#msgName").innerHTML = "";
-    // }, 3000);
-    // rhis is arrow function () => {}
-    if (validatePassword(document.querySelector("#password").value)) {
-        document.querySelector("#msgPassword").innerHTML = "<h4>Password is strong</h4>";
-    }
-    else {
-        document.querySelector("#msgPassword").innerHTML = "<h4>Password is weak</h4>";
-    }
-    if (document.querySelector("[name=Gender]:checked") === null) {
-        document.querySelector("#msgGender").innerHTML = "<h4>You must select gender</h4>";
-    } else {
-        document.querySelector("#msgGender").innerHTML = "";
-    }
-}
-function validatePassword(password) {
-    const minLength = /.{8,}/;
-    const upperCase = /.*[A-Z].*[A-Z].*/;
-    const specialChar = /.*[!@#$&*].*/;
-    const numerals = /.*[0-9].*[0-9].*/;
-    const lowerCase = /.*[a-z].*[a-z].*[a-z].*/;
+    const nameInput = document.querySelector("#name");
+    const passwordInput = document.querySelector("#password");
+    const genderInput = document.querySelector("[name=Gender]:checked");
 
-    return minLength.test(password) &&
-           upperCase.test(password) &&
-           specialChar.test(password) &&
-           numerals.test(password) &&
-           lowerCase.test(password);
+    // Validate name length
+    if (nameInput.value.length >= 2) {
+        document.querySelector("#msgName").innerText = "Name is longer than 2 letters";
+    }
+
+    // Validate password strength
+    if (validatePassword(passwordInput.value)) {
+        document.querySelector("#msgPassword").innerText = "Password is strong";
+    } else {
+        document.querySelector("#msgPassword").innerText = "Password is weak";
+    }
+
+    // Check if gender is selected
+    if (genderInput === null) {
+        document.querySelector("#msgGender").innerText = "You must select gender";
+    } else {
+        document.querySelector("#msgGender").innerText = "";
+    }
 }
+
+// Function to validate password strength
+function validatePassword(password) {
+    const patterns = [
+        /.{8,}/, // Minimum length of 8 characters
+        /.*[A-Z].*[A-Z].*/, // At least 2 uppercase letters
+        /.*[!@#$&*].*/, // At least 1 special character
+        /.*[0-9].*[0-9].*/, // At least 2 numerals
+        /.*[a-z].*[a-z].*[a-z].*/ // At least 3 lowercase letters
+    ];
+    return patterns.every(pattern => pattern.test(password));
+}
+
+// Function to toggle password visibility
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById("password");
     const toggleIcon = document.querySelector(".password-toggle");
 
     if (passwordInput.type === "password") {
-        passwordInput.type = "text"; // Show password
+        passwordInput.type = "text";
         toggleIcon.classList.remove("fa-eye");
-        toggleIcon.classList.add("fa-eye-slash"); // Change icon
+        toggleIcon.classList.add("fa-eye-slash");
     } else {
-        passwordInput.type = "password"; // Hide password
+        passwordInput.type = "password";
         toggleIcon.classList.remove("fa-eye-slash");
-        toggleIcon.classList.add("fa-eye"); // Revert icon
+        toggleIcon.classList.add("fa-eye");
     }
 }
+
+// Function to show password requirements
 function showPasswordRequirements() {
     document.getElementById("passwordRequirements").classList.remove("hidden");
 }
 
+// Function to hide password requirements
 function hidePasswordRequirements() {
     document.getElementById("passwordRequirements").classList.add("hidden");
 }
 
-
-/****check password */
+// Function to check password requirements in real-time
 function checkPasswordRequirements() {
     const password = document.getElementById("password").value;
+    const requirements = {
+        minLength: /.{8,}/,
+        upperCase: /.*[A-Z].*[A-Z].*/,
+        specialChar: /.*[!@#$&*].*/,
+        numerals: /.*[0-9].*[0-9].*/,
+        lowerCase: /.*[a-z].*[a-z].*[a-z].*/
+    };
 
-    const minLength = /.{8,}/;
-    const upperCase = /.*[A-Z].*[A-Z].*/;
-    const specialChar = /.*[!@#$&*].*/;
-    const numerals = /.*[0-9].*[0-9].*/;
-    const lowerCase = /.*[a-z].*[a-z].*[a-z].*/;
-
-    document.getElementById("minLength").classList.toggle("valid", minLength.test(password));
-    document.getElementById("upperCase").classList.toggle("valid", upperCase.test(password));
-    document.getElementById("specialChar").classList.toggle("valid", specialChar.test(password));
-    document.getElementById("numerals").classList.toggle("valid", numerals.test(password));
-    document.getElementById("lowerCase").classList.toggle("valid", lowerCase.test(password));
+    // Toggle the validity class based on the password input
+    for (const [id, pattern] of Object.entries(requirements)) {
+        document.getElementById(id).classList.toggle("valid", pattern.test(password));
+    }
 }
