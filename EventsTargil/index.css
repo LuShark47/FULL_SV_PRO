@@ -1,0 +1,52 @@
+#grandparent{
+    background-color: red;
+    width: 500px;
+    height: 500px;
+}
+#parent{
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+}
+#child{
+    background-color: green;
+    width: 300px;
+    height: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#my-dog {
+    width: 300px;
+    border-radius: 15px;
+}
+
+p {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin: 20px;
+}
+
+.dream {
+    background-color: darksalmon;
+    color: blueviolet;
+}
+
+.success {
+    width: 400px;
+}
+
+.bg-purple {
+    background-color: purple;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
